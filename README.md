@@ -1,7 +1,6 @@
 # CabWay Backend API Documentation
 
-<h2 style="color: #4CAF50;">User Registration Endpoint</h2>
-
+## User Registration Endpoint
 
 ### POST /users/register
 
@@ -78,13 +77,19 @@ Register a new user in the system.
 }
 ```
 
+**Status Code:** 400 (Bad Request)
+```json
+{
+  "message": "User already exists."
+}
+```
+
 **Status Code:** 500 (Internal Server Error)
 ```json
 "Internal server error."
 ```
 
-<h2 style="color: #4CAF50;">User Login Endpoint</h2>
-
+## User Login Endpoint
 
 ### POST /users/login
 
@@ -148,7 +153,7 @@ Allow an existing user to log in to the system using either their phone number o
 "Internal server error."
 ```
 
-<h2 style="color: #4CAF50;">User Profile Endpoint</h2>
+## User Profile Endpoint
 
 ### GET /users/profile
 
@@ -196,8 +201,7 @@ or use HTTP-only cookie named 'token'
 "Internal server error."
 ```
 
-<h2 style="color: #4CAF50;">User Logout Endpoint</h2>
-
+## User Logout Endpoint
 
 ### GET /users/logout
 
@@ -238,17 +242,100 @@ or use HTTP-only cookie named 'token'
 ```
 
 
-<!-- 
-## User Profile Endpoint
+## Captain Registration Endpoint
 
-### GET /user/profile
+### POST /captain/register
+
+Register a new captain (driver) in the system.
 
 #### Request Body
+```json
+{
+  "fullname": {
+    "firstname": "John",
+    "lastname": "Doe"
+  },
+  "email": "john.doe@example.com",
+  "password": "password123",
+  "vehicle": {
+    "color": "Black",
+    "plate": "KL-01-AB-1234",
+    "capacity": "4",
+    "vehicleType": "car"
+  }
+}
+```
+
 #### Validation Rules
+- **First Name:**
+  - Minimum 3 characters
+  - Maximum 20 characters
+  - Only alphabetic characters
+
+- **Last Name:**
+  - Minimum 3 characters
+  - Maximum 20 characters
+  - Only alphabetic characters
+
+- **Email:**
+  - Must be a valid email format
+  - Must be unique in the system
+
+- **Password:**
+  - Minimum 8 characters
+  - Must contain both alphabets and numbers
+
+- **Vehicle Details:**
+  - Color: Minimum 3 characters
+  - Plate: Valid vehicle plate number (Minimum 3 characters)
+  - Capacity: Minimum 1 passenger
+  - Vehicle Type: Must be one of ["car", "motorcycle", "auto"]
+
 #### Success Response
-#### Error Response
+**Status Code:** 201 (Created)
+```json
+{
+  "token": "JWT_TOKEN",
+  "captain": {
+    "fullname": {
+      "firstname": "John",
+      "lastname": "Doe"
+    },
+    "email": "john.doe@example.com",
+    "vehicle": {
+      "color": "Black",
+      "plate": "KL-01-AB-1234",
+      "capacity": "4",
+      "vehicleType": "car"
+    },
+    "createdAt": "2024-02-20T10:00:00.000Z",
+    "updatedAt": "2024-02-20T10:00:00.000Z"
+  }
+}
+```
+
+#### Error Responses
+
+**Status Code:** 400 (Bad Request)
+```json
+{
+  "errors": [
+    {
+      "msg": "First name must be at least 3 characters",
+      "path": "fullname.firstname"
+    }
+  ]
+}
+```
+
+**Status Code:** 400 (Bad Request)
+```json
+{
+  "message": "Captain already exists."
+}
+```
 
 **Status Code:** 500 (Internal Server Error)
 ```json
-"Internal server error."
-``` -->
+"Internal server error"
+```

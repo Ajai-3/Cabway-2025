@@ -1,11 +1,14 @@
 import express from "express";
+import cors from "cors";
 const app = express();
 import dotenv from "dotenv";
 dotenv.config();
-import cors from "cors";
-import userRouter from "./routes/user.route.js"
-import bodyParser from "body-parser";
+
 import cookieParser from "cookie-parser";
+import userRouter from "./routes/user.route.js"
+import captainRouter from "./routes/captain.routes.js"
+
+
 
 app.use(cors());
 app.use(express.json())
@@ -17,6 +20,7 @@ app.get("/", (req, res) => {
 });
 
 app.use('/users', userRouter)
+app.use('/captain', captainRouter)
 
 
 
