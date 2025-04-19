@@ -119,7 +119,7 @@ captainSchema.methods.generateAuthToken = function () {
 // ===========================================================================================================
 // This method compares the provided password with the stored hashed password.
 // ===========================================================================================================
-captainSchema.methods.comparePassword = async function() {
+captainSchema.methods.comparePassword = async function(password) {
     return await bcrypt.compare(password, this.password)
 }
 
