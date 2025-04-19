@@ -1,6 +1,7 @@
 # CabWay Backend API Documentation
 
-## User Registration Endpoint
+<h2 style="color: #4CAF50;">User Registration Endpoint</h2>
+
 
 ### POST /users/register
 
@@ -82,12 +83,12 @@ Register a new user in the system.
 "Internal server error."
 ```
 
-## User Login Endpoint
+<h2 style="color: #4CAF50;">User Login Endpoint</h2>
+
 
 ### POST /users/login
 
 Allow an existing user to log in to the system using either their phone number or email.
-
 
 #### Request Body
 
@@ -146,3 +147,108 @@ Allow an existing user to log in to the system using either their phone number o
 ```json
 "Internal server error."
 ```
+
+<h2 style="color: #4CAF50;">User Profile Endpoint</h2>
+
+### GET /users/profile
+
+Fetch the authenticated user's profile details.
+
+#### Request Headers
+```json
+{
+  "Authorization": "Bearer JWT_TOKEN"
+}
+```
+or use HTTP-only cookie named 'token'
+
+#### Authentication
+- Requires a valid JWT token either in Authorization header or cookie
+- Token must not be blacklisted
+- User must be logged in
+
+#### Success Response
+**Status Code:** 200 (OK)
+```json
+{
+  "fullname": {
+    "firstname": "John",
+    "lastname": "Doe"
+  },
+  "email": "john.doe@example.com",
+  "phonenumber": "9876543210",
+  "createdAt": "2024-02-20T10:00:00.000Z",
+  "updatedAt": "2024-02-20T10:00:00.000Z"
+}
+```
+
+#### Error Responses
+
+**Status Code:** 401 (Unauthorized)
+```json
+{
+  "message": "Unauthorized"
+}
+```
+
+**Status Code:** 500 (Internal Server Error)
+```json
+"Internal server error."
+```
+
+<h2 style="color: #4CAF50;">User Logout Endpoint</h2>
+
+
+### GET /users/logout
+
+Log out the currently authenticated user and blakliste the token.
+
+#### Request Headers
+```json
+{
+  "Authorization": "Bearer JWT_TOKEN"
+}
+```
+or use HTTP-only cookie named 'token'
+
+#### Authentication
+- Requires a valid JWT token either in Authorization header or cookie
+- User must be logged in
+
+#### Success Response
+**Status Code:** 200 (OK)
+```json
+{
+  "message": "Logged out"
+}
+```
+
+#### Error Responses
+
+**Status Code:** 401 (Unauthorized)
+```json
+{
+  "message": "Unauthorized"
+}
+```
+
+**Status Code:** 500 (Internal Server Error)
+```json
+"Internal server error."
+```
+
+
+<!-- 
+## User Profile Endpoint
+
+### GET /user/profile
+
+#### Request Body
+#### Validation Rules
+#### Success Response
+#### Error Response
+
+**Status Code:** 500 (Internal Server Error)
+```json
+"Internal server error."
+``` -->
