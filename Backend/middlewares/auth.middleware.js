@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import userModel from "../models/user.model.js";
 import { HttpStatus } from "../utils/httpStatus.js";
 import captainModel from "../models/captain.model.js";
-import blackistTokenModel from "../models/blacklistToken.model.js";
+import blackistTokenModel from "../models/blacklistToken.model.js"; 
 
 // ===========================================================================================================
 // AUTH USER
@@ -14,6 +14,12 @@ export const authUser = async (req, res, next) => {
   try {
     const token = req.cookies.token || req.headers.authorization?.split(" ")[1];
 
+
+
+
+
+
+    
     if (!token) {
       return res
         .status(HttpStatus.UNAUTHORIZED)
