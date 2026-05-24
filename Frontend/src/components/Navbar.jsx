@@ -8,7 +8,10 @@ const Navbar = () => {
     <nav className='bg-black text-white'>
       <div className='hidden md:flex justify-between items-center px-10 lg:px-20 py-4'>
         <div className='flex items-center gap-8'>
-          <span className='text-xl font-bold tracking-wide cursor-pointer'>Cabway</span>
+         <div className='flex items-center gap-2'>
+           <img src='round-logo.png' className='w-10 h-10' />
+          <span className='text-2xl font-bold tracking-wide cursor-pointer'>Cabway</span>
+         </div>
           <div className='flex items-center gap-1 text-sm font-medium'>
             {['Ride', 'Drive', 'Business'].map((item) => (
               <a key={item} href='#' className='px-3 py-2 rounded-full hover:bg-neutral-800 transition-colors duration-300'>
