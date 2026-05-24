@@ -6,9 +6,7 @@ const Navbar = () => {
 
   return (
     <nav className='bg-black text-white'>
-      {/* Desktop */}
       <div className='hidden md:flex justify-between items-center px-10 lg:px-20 py-4'>
-        {/* Left */}
         <div className='flex items-center gap-8'>
           <span className='text-xl font-bold tracking-wide cursor-pointer'>Cabway</span>
           <div className='flex items-center gap-1 text-sm font-medium'>
@@ -22,8 +20,6 @@ const Navbar = () => {
             </a>
           </div>
         </div>
-
-        {/* Right */}
         <div className='flex items-center gap-2 text-sm font-medium'>
           <a href='#' className='px-3 py-2 rounded-full hover:bg-neutral-800 transition-colors duration-300 flex items-center gap-1'>
             <Globe size={15} /> EN
@@ -34,7 +30,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile */}
       <div className='md:hidden flex justify-between items-center px-5 py-4'>
         <span className='text-xl font-bold tracking-wide cursor-pointer'>Cabway</span>
         <div className='flex items-center gap-2'>
@@ -50,7 +45,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Dropdown */}
       {menuOpen && (
         <div className='md:hidden bg-black border-t border-neutral-800 px-5 pb-4 flex flex-col gap-1 text-sm font-medium'>
           {['Ride', 'Drive', 'Business', 'About', 'Help'].map((item) => (

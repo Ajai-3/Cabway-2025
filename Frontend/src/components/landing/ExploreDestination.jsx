@@ -48,7 +48,6 @@ const ExploreDestination = () => {
 
   return (
     <section className='bg-gray-50 px-5 md:px-10 lg:px-20 py-10 md:py-14'>
-      {/* Header */}
       <div className='mb-5'>
         <h2 className='text-2xl md:text-3xl font-extrabold text-black mb-2'>
           Explore your destination
@@ -59,7 +58,6 @@ const ExploreDestination = () => {
         </p>
       </div>
 
-      {/* Tabs */}
       <div className='flex items-center gap-0 border-b border-gray-200 mb-6 overflow-x-auto scrollbar-hide'>
         {tabs.map((tab) => (
           <button
@@ -76,34 +74,21 @@ const ExploreDestination = () => {
         ))}
       </div>
 
-      {/* Content Grid */}
       <div className='flex flex-col md:flex-row gap-5 md:gap-6'>
-
-        {/* ── DESKTOP: Left column — attraction list (scrollable) ── */}
         <div className='hidden md:flex flex-col gap-2 w-[280px] flex-shrink-0 max-h-[380px] overflow-y-auto pr-1'>
           {attractions.map((a) => (
             <AttractionRow key={a.id} {...a} />
           ))}
         </div>
 
-        {/* ── DESKTOP: Middle column — map ── */}
         <div className='hidden md:block flex-1 min-w-0'>
-          <img
-            src='/map.jpg'
-            alt='Map of Kochi'
-            className='w-full h-[380px] object-cover rounded-2xl'
-          />
+          <img src='/map.jpg' alt='Map of Kochi' className='w-full h-[380px] object-cover rounded-2xl' />
         </div>
 
-        {/* ── DESKTOP: Right column — articles ── */}
         <div className='hidden md:flex flex-col gap-4 w-[280px] flex-shrink-0'>
           {articles.map((article) => (
             <div key={article.id} className='flex flex-col gap-2'>
-              <img
-                src={article.image}
-                alt={article.title}
-                className='w-full h-[160px] object-cover rounded-xl'
-              />
+              <img src={article.image} alt={article.title} className='w-full h-[160px] object-cover rounded-xl' />
               <div className='flex items-start justify-between gap-3'>
                 <p className='text-sm font-semibold text-black leading-snug'>{article.title}</p>
                 <button className='bg-black text-white text-xs font-semibold px-3 py-2 rounded-full whitespace-nowrap hover:bg-neutral-800 transition-colors duration-200 flex-shrink-0'>
@@ -114,31 +99,20 @@ const ExploreDestination = () => {
           ))}
         </div>
 
-        {/* ── MOBILE: Map on top ── */}
         <div className='md:hidden w-full'>
-          <img
-            src='/map.jpg'
-            alt='Map of Kochi'
-            className='w-full h-52 object-cover rounded-2xl'
-          />
+          <img src='/map.jpg' alt='Map of Kochi' className='w-full h-52 object-cover rounded-2xl' />
         </div>
 
-        {/* ── MOBILE: Attraction list ── */}
         <div className='md:hidden flex flex-col gap-2 w-full'>
           {attractions.map((a) => (
             <AttractionRow key={a.id} {...a} />
           ))}
         </div>
 
-        {/* ── MOBILE: Articles ── */}
         <div className='md:hidden flex flex-col gap-6 w-full mt-2'>
           {articles.map((article) => (
             <div key={article.id} className='flex flex-col gap-3'>
-              <img
-                src={article.image}
-                alt={article.title}
-                className='w-full h-52 object-cover rounded-2xl'
-              />
+              <img src={article.image} alt={article.title} className='w-full h-52 object-cover rounded-2xl' />
               <div className='flex items-start justify-between gap-3'>
                 <p className='text-base font-semibold text-black leading-snug'>{article.title}</p>
                 <button className='bg-black text-white text-xs font-semibold px-3 py-2 rounded-full whitespace-nowrap hover:bg-neutral-800 transition-colors duration-200 flex-shrink-0'>
@@ -148,7 +122,6 @@ const ExploreDestination = () => {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   )

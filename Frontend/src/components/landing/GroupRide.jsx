@@ -5,15 +5,9 @@ const GroupRide = () => {
   return (
     <section className='px-5 md:px-10 lg:px-20 py-12 md:py-16 bg-white'>
       <div className='flex flex-col md:flex-row items-center gap-10 md:gap-16 max-w-screen-xl mx-auto'>
-
-        {/* Left: Mock UI Card */}
         <div className='w-full md:w-1/2 flex justify-center md:justify-start'>
           <div className='relative w-full max-w-sm'>
-
-            {/* Phone-style card */}
             <div className='bg-white border border-gray-200 rounded-2xl shadow-lg overflow-hidden'>
-
-              {/* Top bar */}
               <div className='flex items-center justify-between px-5 py-4 border-b border-gray-100'>
                 <div className='flex items-center gap-3'>
                   <div className='w-1 h-6 bg-black rounded-full' />
@@ -23,11 +17,9 @@ const GroupRide = () => {
                 <UserPlus size={18} className='text-black' />
               </div>
 
-              {/* Body */}
               <div className='px-5 py-5 flex flex-col gap-4'>
                 <p className='text-sm font-semibold text-black'>Set pickup order</p>
 
-                {/* Person 1 */}
                 <div className='flex items-center gap-3'>
                   <div className='w-6 h-6 rounded-full bg-black text-white text-xs font-bold flex items-center justify-center flex-shrink-0'>
                     1
@@ -39,7 +31,6 @@ const GroupRide = () => {
                   <AlignJustify size={16} className='text-gray-400' />
                 </div>
 
-                {/* Person 2 */}
                 <div className='flex items-center gap-3'>
                   <div className='w-6 h-6 rounded-full bg-black text-white text-xs font-bold flex items-center justify-center flex-shrink-0'>
                     2
@@ -52,7 +43,6 @@ const GroupRide = () => {
                 </div>
               </div>
 
-              {/* Bottom bar */}
               <div className='flex justify-center gap-3 px-5 py-4 border-t border-gray-100'>
                 <div className='w-1 h-8 bg-black rounded-full' />
                 <div className='w-1 h-8 bg-black rounded-full' />
@@ -61,7 +51,6 @@ const GroupRide = () => {
           </div>
         </div>
 
-        {/* Right: Text */}
         <div className='w-full md:w-1/2 flex flex-col gap-4 text-center md:text-left'>
           <h2 className='text-3xl md:text-4xl font-extrabold text-black leading-tight'>
             Ride with friends<br />seamlessly
@@ -75,7 +64,6 @@ const GroupRide = () => {
             </a>
           </div>
         </div>
-
       </div>
     </section>
   )

@@ -35,31 +35,19 @@ const services = [
 
 const ServiceCard = ({ title, description, image }) => (
   <div className='bg-gray-100 rounded-2xl p-5 flex flex-col justify-between gap-4 hover:bg-gray-200 transition-colors duration-200 cursor-pointer'>
-
-    {/* Desktop: text left, image right */}
     <div className='hidden md:flex items-start justify-between gap-3'>
       <div className='flex flex-col gap-2'>
         <h3 className='font-semibold text-black text-base'>{title}</h3>
         <p className='text-sm text-gray-500 leading-relaxed max-w-[180px]'>{description}</p>
       </div>
-      <img
-        src={image}
-        alt={title}
-        className='w-20 h-20 object-contain flex-shrink-0'
-      />
+      <img src={image} alt={title} className='w-20 h-20 object-contain flex-shrink-0' />
     </div>
 
-    {/* Mobile: image top, title bottom */}
     <div className='md:hidden flex flex-col items-center gap-3 py-2'>
-      <img
-        src={image}
-        alt={title}
-        className='w-16 h-16 object-contain'
-      />
+      <img src={image} alt={title} className='w-16 h-16 object-contain' />
       <span className='text-sm font-medium text-black'>{title}</span>
     </div>
 
-    {/* Details button — desktop only */}
     <div className='hidden md:block'>
       <button className='text-sm font-medium border border-gray-300 bg-white hover:bg-gray-50 transition-colors duration-200 px-4 py-2 rounded-full'>
         Details
@@ -75,14 +63,12 @@ const ExploreSection = () => {
         Explore what you can do with Cabway
       </h2>
 
-      {/* Desktop: 3-col grid */}
       <div className='hidden md:grid grid-cols-3 gap-4'>
         {services.map((s) => (
           <ServiceCard key={s.id} {...s} />
         ))}
       </div>
 
-      {/* Mobile: 2-col grid */}
       <div className='md:hidden grid grid-cols-2 gap-3'>
         {services.map((s) => (
           <ServiceCard key={s.id} {...s} />
