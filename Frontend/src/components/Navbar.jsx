@@ -9,7 +9,7 @@ const Navbar = () => {
       <div className='hidden md:flex justify-between items-center px-10 lg:px-20 py-2'>
         <div className='flex items-center gap-8'>
          <div className='flex items-center gap-2'>
-           <img src='round-logo.png' className='w-10 h-10' />
+           <img src='round-logo.png' className='w-8 h-8' />
           <span className='text-2xl font-bold tracking-wide cursor-pointer'>Cabway</span>
          </div>
           <div className='flex items-center gap-1 text-sm font-medium'>
