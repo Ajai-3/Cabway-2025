@@ -6,7 +6,7 @@ const Navbar = () => {
 
   return (
     <nav className='bg-black text-white'>
-      <div className='hidden md:flex justify-between items-center px-10 lg:px-20 py-4'>
+      <div className='hidden md:flex justify-between items-center px-10 lg:px-20 py-2'>
         <div className='flex items-center gap-8'>
          <div className='flex items-center gap-2'>
            <img src='round-logo.png' className='w-10 h-10' />
